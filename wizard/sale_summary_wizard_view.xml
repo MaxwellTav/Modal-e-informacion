@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sale_summary_wizard" model="ir.ui.view">
+        <field name="name">sale.summary.wizard.form</field>
+        <field name="model">sale.summary.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="order_id" />
+                    <field name="partner_id" />
+                    <field name="amount_total" />
+                </group>
+                <footer>
+                    <button string="Cerrar" class="btn-primary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_sale_summary_wizard" model="ir.actions.act_window">
+        <field name="name">action.sale.summary.wizard</field>
+        <field name="res_model">sale.summary.wizard</field>
+        <field name="view_id" ref="view_sale_summary_wizard"></field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
